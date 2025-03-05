@@ -1,0 +1,151 @@
+<!-- Alex MEURILLON Gr.3 -->
+<!-- Code HTML pour la page de connexion -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Connexion/Inscription</title>
+        <meta charset="utf-8">  
+
+        <!-- Lien pour la page CSS -->
+        <link rel="stylesheet" type="text/css" href="styleconnect.css">   
+    </head>
+    <body>
+
+        <!-- Toutes ces div servent à l'animation de la page -->
+        <div class= 'container'>
+            <div class="container_content">
+                <div class="container_content_inner">
+                    <header>
+                        <img
+                            src="images/home.png"
+                            alt="Bouton d'accueil pour retourner à la page principal"
+                            width="40"
+                            height="34"
+                            title="Bouton home" />
+                        <h1>Jeu du pendu</h1>
+                    </header>
+                    <div id="par">
+                        <p>Pour accéder au site, veuillez-vous connecter à votre compte. Vous pouvez aussi vous inscrire.</p>
+                    </div>
+                    <div id="choix">
+
+                        <!-- Bouton sur la page d'accueil pour rediriger l'utilisateur sur les bons outils de vérification -->
+                        <p id="bouton_connection"><input type="button" value="Connexion"></p>
+                        <p id="bouton_inscription"><input type="button" value="Inscription"></p>
+                    </div>
+                    <div id="btns">
+                        <h2> Nom d'utilisateur :</h2>
+
+                        <!-- Interface pour rentrer son nom d'utilisateur dans tous les cas -->
+                        <p id="username"><input type="text" value=""></p>
+                        <h2 id="mdp"> Mot de passe :</h2>
+
+                        <!-- Section pour vérifier que le mot de passe vérifie des critères de sécurité lors de l'inscription -->
+                        <div id="container_password">
+                            <h2>MOT DE PASSE SÉCURISÉ : </h2>
+
+                            <!-- Div pour rentrer le mot de passe avec la possibilité de la cacher ou non -->
+                            <div class="password-body">
+                                <div class="password-inputs">
+                                    <input type="password" name="validatorText" id="validatorText" value="" />
+                                    <img id="ShowHide" src="images/hide_eye.png" />
+                                </div>
+                            </div>
+
+                            <!-- Section pour afficher les critères de sécurité réussi ou non (avec des images et du texte coloré) -->
+                            <div class="password-check">
+                                <div class="check-length">
+                                    <img src="images/close.jpeg" /> Au moins 8 caractères
+                                </div>
+                                <div class="check-uppercase">
+                                    <img src="images/close.jpeg" /> Au moins 1 lettre majuscule (A-Z)
+                                </div>
+                                <div class="check-lowercase">
+                                    <img src="images/close.jpeg" /> Au moins 1 lettre minuscule (a-z)
+                                </div>
+                                <div class="check-number">
+                                    <img src="images/close.jpeg" /> Au moins 1 nombre (0-9)
+                                </div>
+                                <div class="check-special">
+                                    <img src="images/close.jpeg" /> Au moins 1 caractère spécial (@-$)
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section pour rentrer son mot de passe lors de la connexion -->
+                        <p id="password"><input type="password" value=""></p>
+
+                        <!-- Bouton de connexion ou d'inscription (dépend du cas dans lequel on est) -->
+                        <p id="connection"><input type="button" value="Se connecter"></p>
+                        <p id="inscription"><input type="button" value="Créer un nouveau compte"></p>
+                    </div>
+
+                    <!-- Section avec toutes les phrases pour avertir l'utilisateur des problèmes rencontrés ou de l'inscription réussie -->
+                    <div id="mdp_faux">
+                        <h2> Le mot de passe saisie est incorrect. Veuillez réessayer. </h2>
+                    </div>
+                    <div id="redirection">
+                        <h2> Votre inscription est validée, vous êtes désormais connecté ! Redirection vers le jeu du Pendu ...</h2>
+                    </div>
+                    <div id="utilisateur_deja_cree">
+                        <h2> Ce nom d'utilisateur est déjà pris, veuillez en choisir un nouveau.</h2>
+                    </div>
+                    <div id="inconnu">
+                        <h2> Nom d'utilisateur incorrect. Veuillez réessayer. </h2>
+                    </div>
+                    <div id="no_username">
+                        <h2> Veuillez saisir un nom d'utilisateur valide. </h2>
+                    </div>
+                    <div id="no_serveur">
+                        <h2> Error 404. Veuillez revenir plus tard. </h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image d'illustration -->
+            <div class="container_outer_img">
+                <div class="img-inner">
+                    <img 
+                    src="images/connect.jpg"  
+                    alt="Image du jeu du pendu ironique" 
+                    class="container_img"
+                    title="Image d'illustration"/>
+                </div>
+            </div>
+        </div>
+
+            <!-- Permet l'animation du site -->
+            <div class="overlay"></div>
+        <footer>
+            <!-- Réseaux sociaux en bas de page -->
+            <a href="https://instagram.com">
+                <img
+                    src="images/instagram.png"
+                    alt="Bouton pour accéder au profil Instagram du créateur"
+                    width="30"
+                    height="30"
+                    title="Bouton Instagram" />
+            </a>
+            <a href="https://youtu.be/UI8lbTBPxnk">
+                <img
+                    src="images/youtube.png"
+                    alt="Bouton pour accéder à l'unique vidéo du créateur (perle rare)"
+                    width="30"
+                    height="30"
+                    title="Bouton YouTube" />
+            </a>
+            <a href="https://github.com/Malt0r1Z/Projet-Simulateur-Arduino">
+                <img
+                    src="images/github.png"
+                    alt="Bouton pour accéder au profil GitHub du créateur"
+                    width="30"
+                    height="30"
+                    title="Bouton GitHub" />
+            </a>
+        </footer>
+
+        <!-- Lien vers la page js. On le met à la fin par convention (même avec defer) -->
+        <script src="connect.js" defer></script>
+    </body>
+</html>

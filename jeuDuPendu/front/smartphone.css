@@ -1,0 +1,87 @@
+/* Alex MEURILLON Gr.3 */
+
+body {
+    min-width: auto;
+    display: block;
+}
+
+#me ~ p {
+    text-align: center;
+}
+
+#leftcol {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.cventry > p {
+    text-align: center;
+}
+
+#rightcol, .cventry > p {
+    padding-right: 10px;
+}
+
+#menu {
+    display: none;
+}
+
+#menu li:last-child {
+    display:block;
+}
+
+#menub {
+    margin: 10px;
+}
+
+#menub > div {
+	width: 30px;
+	height: 4px;
+	background-color: black;
+	margin: 5px 0;
+}
+
+nav li:hover > ul {
+    display:none;
+}
+
+#menu.resp {
+    display: block;
+    height: auto;
+}
+
+#menub.hideb {
+    display: none;
+}
+
+.submenu.resp2 {
+    display: block;
+    height: auto;
+    overflow:hidden;
+    margin-left:-2px;
+    padding:0px;
+    margin-bottom:-2px;
+}
+
+
+#menu li p {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+} 
+
+#menu li:hover p {
+    background-color: brown;
+}
+
+#menu.fermer1 {
+    display:none;
+}
+
+#menub.ouvrir1 {
+    display: block;
+    height: auto;
+}

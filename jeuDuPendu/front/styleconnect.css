@@ -1,0 +1,328 @@
+/* Alex MEURILLON Gr.3 */
+
+/* Sélectionne tous les éléments HTML  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sélectionne les éléments racines (généralement l'élément <html>) pour stocker deux couleurs */
+:root {
+  --secondary-color: #151226;
+  --contrast-color: #BF307F;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: -10;
+  background-color: var(--contrast-color);
+}
+
+/* Animation de la page */
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  /* Animation nommée "expand" (voir plus bas) qui dure 0.8 seconde, utilise une accélération ease, 
+  et joue une seule fois dans la direction forwards */
+  animation: expand .8s ease forwards;
+  background-color: var(--secondary-color);
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Transition qui s'applique à toutes les propriétés CSS, d'une durée de 0.8 seconde, avec une accélération ease */
+  transition: all .8s ease;
+}
+
+.container_content {
+ width: 50%;
+}
+
+.container_content_inner {
+  width: 80%;
+  margin-left: 80px;
+}
+
+.container_outer_img {
+  margin: 50px;
+  width: 50%;
+  overflow: hidden;
+}   
+    
+.container_img {
+  width: 100%;
+  /* Animation nommée slideIn (voir ci-dessous) qui durera 1.5 secondes, utilisera une fonction de temporisation de type ease-in-out,
+   et maintiendra les styles finaux une fois l'animation terminée. */
+  animation: slideIn 1.5s ease-in-out forwards;
+}
+
+.par {
+  height: auto;
+  overflow: hidden;
+}
+
+p{
+  line-height: 28px;
+  /* Déplace les paragrpahes de manière vertical de haut en bas de 300px */
+  transform: translateY(300px);
+  /* Animation nommée slideUp (voir ci-dessous) qui durera 0.8 seconde, utilisera une fonction de temporisation de type ease-in-out,
+   maintiendra les styles finaux une fois l'animation terminée, et commencera 0.8 seconde après le chargement ou la visibilité des paragraphes */
+  animation: slideUp .8s ease-in-out forwards .8s;
+}
+
+
+
+#btns {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.btns_more {
+  background: transparent;
+  border: 1px solid var(--contrast-color);
+  border-radius: 50px;
+  padding: 8px 12px;
+  color: #BF307F;
+  font-size: 16px;
+  text-transform: uppercase;
+  position: relative;
+  margin-top: 15px;
+  outline: none;
+  transform: translateY(50px);
+  animation: slideUp .8s ease-in-out  forwards 1s;
+}
+
+header {
+  overflow: hidden;
+  height: auto;
+}
+
+h1, footer{
+    font-size: 40px;
+    color: var(--contrast-color);
+    margin-bottom: 20px;
+    transform: translateY(100px);
+    animation: slideUp .8s ease forwards .5s;
+}
+
+
+/* Animations */
+
+/* Transition d'une position décalée de 500 pixels vers la droite et réduite à 20% de sa taille originale à sa position d'origine
+ sans réduction de taille. */
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+/* Déplace l'élément vers le haut de 300 pixels par rapport à sa position originale au début de l'animation, 
+puis le ramène à sa position d'origine à la fin de l'animation. */
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Déplace l'élément vers le haut de 1400 pixels par rapport à sa position originale au début de l'animation, 
+puis le ramène à sa position d'origine à la fin de l'animation. */
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
+
+/* Règles permettant de cacher des éléments */
+
+#inscription.hide {
+  display:none;
+}
+
+#connection.hide {
+  display: none;
+}
+
+#password.hide {
+  display: none;
+}
+
+#mdp.hide {
+  display: none;
+}
+
+#par.hide {
+  display:none;
+}
+
+#container_password.hide {
+  display: none;
+}
+
+
+
+
+/* Règle pour le mot de passe lors de l'inscription */
+
+#container_password {
+  background: #ffffff;
+  padding: 25px;
+  width: 450px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+#container_password h2 {
+  color:#BF307F;
+  display: flex;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+.password-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #78c1f3;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.password-inputs input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.password-inputs img {
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  background: limegreen;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+.password-check div {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-weight: 500;
+  color: purple;
+}
+
+.password-check img {
+  height: 25px;
+  padding-right: 10px;
+}
+
+#choix.hide {
+  display: none;
+}
+
+#choix{
+  display:block;
+  text-align: center;
+}
+
+#bouton_connection{
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+
+
+
+/* Design des boutons de connexion, d'inscription et de validation */
+
+#bouton_connection input, #bouton_inscription input, #connection input, #inscription input {
+  background-color: purple;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+
+  /* Désactive la sélection de texte par l'utilisateur dans les boutons */
+  user-select: none;
+  /* règle spécifique est destinée aux navigateurs WebKit comme Safari*/
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+#connection, #inscription {
+  margin-top: 20px;
+}
+
+
+/* Change la couleur du bouton lorsqu'on survolle ou focus les boutons d'inscription et de connexion */
+#bouton_inscription input:hover,
+#bouton_inscription input:focus,
+#bouton_connection input:hover,
+#bouton_connection input:focus {
+  background-color: rgb(98, 71, 98);
+}
+
+#btns {
+  display:none;
+}
+
+#redirection, #mdp_faux, #utilisateur_deja_cree, #inconnu, #no_username, #no_serveur, #no_connect {
+  margin-top: 20px;
+}
+
+#redirection, #mdp_faux, #utilisateur_deja_cree, #inconnu, #no_username, #no_serveur, #no_connect {
+  display: none;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  margin-right: 30px;
+}
+
